@@ -1,41 +1,35 @@
 <template>
   <v-app>
-        <v-navigation-drawer app v-model="drawer">
-      <v-list-item>
-        <v-list-item-title class="title">
-          Sprix
-        </v-list-item-title>
-        <v-btn icon>
-          <v-icon>mdi-chevron-left</v-icon>
-        </v-btn>
-      </v-list-item>
-      <v-divider />
-      <v-list nav>
-        <v-list-item v-for="menu in menus" :key="menu.title" :to="menu.url">
-          <v-list-item-icon>
-            <v-icon>{{ menu.icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>{{ menu.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
     <v-app-bar app dark>
       <!-- アプリケーションバー -->
-      <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-toolbar-title>Sprix</v-toolbar-title>
+      <v-toolbar-title style="margin-left:4vw;">Sprix</v-toolbar-title>
+      
+      <v-spacer></v-spacer>
+
+      <v-btn icon style="margin-right:4vw;">
+        <v-icon large color="orange darken-2">mdi-email</v-icon>
+      </v-btn>
+      
     </v-app-bar>
 
     <v-content>
       <Navigation/>
-      <Carousels/> <br><br><br>
-      <h2>Events</h2><br>
-      <Cards/> <br>
-      <Cards2/><br><br>
+      <Carousels/><br><br>
+      <v-card  class="d-flex pa-2 subtitle" id="0">
+      <h2 class="maintitle">イベント</h2>
+      </v-card><br>
+      <Cards/><br><br>
+      <v-card  class="d-flex pa-2 subtitle"  id="2">
+      <h2 class="maintitle">大会の流れ</h2>
+      </v-card><br><br>
+      <Smalldots/><br><br>
+      <br><br>
+      <v-card  class="d-flex pa-2 subtitle"  id="3">
+      <h2 class="maintitle">大会結果</h2>
+      </v-card><br><br>
+      <Table/>
       <v-divider></v-divider> <br><br>
-      <h2 style="" >About Sprix</h2><br>
+      <Team/><br><br>
       <Footer/>
     </v-content>
   </v-app>
@@ -45,8 +39,11 @@
 
 import Carousels from './components/Carousels';
 import Cards from './components/Cards';
-import Cards2 from './components/Cards2';
+// import Cards2 from './components/Cards2';
 import Footer from './components/Footer';
+import Smalldots from './components/Smalldots'
+import Table from './components/Table'
+import Team from './components/Team'
 
 export default {
   name: 'App',
@@ -54,17 +51,20 @@ export default {
   components: {
     Carousels,
     Cards,
-    Cards2,
+   // Cards2,
     Footer,
+    Smalldots,
+    Table,
+    Team,
   },
 
     data: () => ({
     drawer: false,
     menus: [
-      { title: 'Event', icon: 'mdi-web', url: '#events' },
-      { title: 'About', icon: 'mdi-home', url: '#about' },
-      { title: 'How to Entry', icon: 'mdi-heart', url: '#How' },
-      { title: 'Contact', icon: 'mdi-information-variant', url:'#contact'}
+      { title: 'イベント', icon: 'mdi-web', url: "#0" },
+      { title: '運営', icon: 'mdi-home', url:  "#1" },
+      { title: '大会の流れ', icon: 'mdi-heart', url:  "#2" },
+      { title: '過去の大会結果', icon: 'mdi-information-variant', url: "#3"}
     ]
   })
 } 
@@ -72,4 +72,14 @@ export default {
 </script>
 
 <style scoped>
-</style>>
+.subtitle{
+  margin: 0vw 5vw;
+  background-color:rgb(207, 8, 141);
+}
+
+.maintitle{
+  color:white;
+  margin-left: 5vw;
+}
+
+</style>

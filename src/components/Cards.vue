@@ -17,13 +17,13 @@
     </v-card-subtitle>
 
     <v-card-actions>
-      <v-btn text>SHARE</v-btn>
+      <v-btn text @click="twitterShare">Share</v-btn>
 
       <v-btn
         color="purple"
         text
       >
-        詳細/エントリーページ
+        エントリーページ
       </v-btn>
 
       <v-spacer></v-spacer>
@@ -42,7 +42,7 @@
 
         <v-card-text>
           <h3>概要：</h3>
-          <p>日程：8/2</p>
+          <p>日程：9/?</p>
           <p>賞金<p/>
         </v-card-text>
       </div>
@@ -55,6 +55,14 @@
     data: () => ({
       show: false,
     }),
+    methods:{
+      twitterShare(){
+          //シェアする画面を設定
+          var shareURL = 'https://twitter.com/intent/tweet?text=' + 'メソロギアの公式大会に参加しよう！！' + "%20%23メソロギア" + '&url=' + "ここに大会エントリーページのリンクを張ります";  
+          //シェア用の画面へ移行
+          location.href = shareURL
+      }
+    }
   }
 
   
