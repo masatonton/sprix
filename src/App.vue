@@ -2,7 +2,13 @@
   <v-app>
     <v-app-bar app dark>
       <!-- アプリケーションバー -->
-      <v-toolbar-title style="margin-left:4vw;">Sprix</v-toolbar-title>
+      <v-toolbar-title style="margin-left:4vw;">
+        <div>
+        <v-img class="logo"
+          src="./assets/sprixlogo.png"
+        ></v-img>
+        </div>
+      </v-toolbar-title>
       
       <v-spacer></v-spacer>
 
@@ -81,6 +87,12 @@ export default {
 .maintitle{
   color:white;
   margin-left: 5vw;
+}
+
+.logo{
+  max-width:100px; /* 画像の最大幅 */
+  margin: auto; /* 画像の左右の余白を同じ幅にする */
+  display: block; /* 画像の下の隙間をなくす */
 }
 
 </style>
