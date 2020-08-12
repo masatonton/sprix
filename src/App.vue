@@ -90,7 +90,7 @@ export default {
 }
 
 .logo{
-  max-width:100px; /* 画像の最大幅 */
+  max-width:120px; /* 画像の最大幅 */
   margin: auto; /* 画像の左右の余白を同じ幅にする */
   display: block; /* 画像の下の隙間をなくす */
 }
