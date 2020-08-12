@@ -6,7 +6,8 @@
       
       <v-spacer></v-spacer>
 
-      <v-btn icon style="margin-right:4vw;">
+    
+      <v-btn  icon style="margin-right:4vw;" href="https://twitter.com/messages/compose?recipient_id=951155124646305792">
         <v-icon large color="orange darken-2">mdi-email</v-icon>
       </v-btn>
       

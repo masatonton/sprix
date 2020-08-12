@@ -1,5 +1,5 @@
 <template>
-  <div v-if="$vuetify.breakpoint.sm">
+  <div v-if="$vuetify.breakpoint.mobile">
   <v-timeline dense style='margin:0vw 6vw;'>
     <v-timeline-item
       v-for="(flow) in flows"
